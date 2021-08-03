@@ -15,14 +15,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        picker.delegate = self
     }
 
     @IBAction func addAction(_ sender: UIButton) {
         
         let alter = UIAlertController(title: "제목", message: "메시지", preferredStyle: .actionSheet)
         
-        let gallery = UIAlertAction(title: "사진앨범", style: .default, handler: {ACTION in in self.openLibrary()})
+        let gallery = UIAlertAction(title: "사진앨범", style: .default, handler: {ACTION in self.openGallery()})
         
         let camera = UIAlertAction(title: "카메라", style: .default, handler: {ACTION in self.openCamera()})
         
@@ -33,6 +34,16 @@ class ViewController: UIViewController {
         alter.addAction(cancel)
         
         present(alter, animated: true, completion: nil)
+    }
+    
+    func openGallery(){
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera(){
+        picker.sourceType = .camera
+        present(picker, animated: false, completion: nil)
     }
     
 }
