@@ -42,6 +42,10 @@ class ViewController: UIViewController {
     }
     
     func openCamera(){
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera is not available")
+            return
+        }
         picker.sourceType = .camera
         present(picker, animated: false, completion: nil)
     }
@@ -54,5 +58,12 @@ class ViewController: UIViewController {
  ***Swift 컨벤션에 따르면, 이런 Delegate채택작업은 extension으로 빼는게 좋다***
 */
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            imageView.image = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
 }
