@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     let picker = UIImagePickerController()
+    var imageURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,13 @@ class ViewController: UIViewController {
         present(picker, animated: false, completion: nil)
     }
     
-}
+    @IBAction func btnUpload(_ sender: Any) {
+        let imageUploadModel = ImageUploadModel()
+        imageUploadModel.uploadImageFile(at: imageURL!, completionHandler: {_,_ in print("Upload Success")})
+    }
+    
+    
+} //ViewController
 /*
  UIImagePickerControllerDelegate의 delegate 속성은 UIImagePickerControllerDelegate와 UINavigationControllerDelegate 프로토콜을 모두 구현하는 객체로 정의되어있다.
  (위에서 해준 picker.delegate =  self) self를  picker.delegate에 할당하려면 self는 UINavigationControllerDelegate 타입이어야 한다.
@@ -62,6 +69,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             imageView.image = image
+            //업로드에 사용할 url
+            imageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
         }
         dismiss(animated: true, completion: nil)
     }

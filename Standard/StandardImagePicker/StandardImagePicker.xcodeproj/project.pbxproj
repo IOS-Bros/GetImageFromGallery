@@ -13,6 +13,7 @@
 		803EBAF626B8EC5900D5D350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803EBAF426B8EC5900D5D350 /* Main.storyboard */; };
 		803EBAF826B8EC5B00D5D350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803EBAF726B8EC5B00D5D350 /* Assets.xcassets */; };
 		803EBAFB26B8EC5B00D5D350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803EBAF926B8EC5B00D5D350 /* LaunchScreen.storyboard */; };
+		803EBB0326BA1D4800D5D350 /* ImageUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0226BA1D4800D5D350 /* ImageUploadModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		803EBAF726B8EC5B00D5D350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		803EBAFA26B8EC5B00D5D350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		803EBAFC26B8EC5B00D5D350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		803EBB0226BA1D4800D5D350 /* ImageUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				803EBAF726B8EC5B00D5D350 /* Assets.xcassets */,
 				803EBAF926B8EC5B00D5D350 /* LaunchScreen.storyboard */,
 				803EBAFC26B8EC5B00D5D350 /* Info.plist */,
+				803EBB0226BA1D4800D5D350 /* ImageUploadModel.swift */,
 			);
 			path = StandardImagePicker;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				803EBAF326B8EC5900D5D350 /* ViewController.swift in Sources */,
 				803EBAEF26B8EC5900D5D350 /* AppDelegate.swift in Sources */,
+				803EBB0326BA1D4800D5D350 /* ImageUploadModel.swift in Sources */,
 				803EBAF126B8EC5900D5D350 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
